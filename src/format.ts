@@ -79,7 +79,7 @@ export class DateTimeFormatter {
    */
   private getMonthName(): string {
     const month = this.dt.getMonth();
-    if (month >= 1 && month < MONTH_NAMES.length) {
+    if (month >= 1 && month <= 13) {
       return MONTH_NAMES[month];
     }
     return '';
@@ -90,7 +90,7 @@ export class DateTimeFormatter {
    */
   private getDayName(): string {
     const dayOfWeek = this.dt.getDayOfWeek();
-    if (dayOfWeek >= 1 && dayOfWeek < DAY_NAMES.length) {
+    if (dayOfWeek >= 1 && dayOfWeek <= 7) {
       return DAY_NAMES[dayOfWeek];
     }
     return '';
@@ -101,7 +101,7 @@ export class DateTimeFormatter {
    */
   private getOrthodoxDayName(): string {
     const day = this.dt.getDay();
-    if (day >= 1 && day < ORTHODOX_DAY_NAMES.length) {
+    if (day >= 1 && day <= 30) {
       return ORTHODOX_DAY_NAMES[day];
     }
     return '';
@@ -130,7 +130,7 @@ export class DateTimeFormatter {
    */
   private getDayInGeez(): string {
     const day = this.dt.getDay();
-    if (day >= 1 && day < GEEZ_NUMBERS.length) {
+    if (day >= 1 && day <= 30) {
       return GEEZ_NUMBERS[day];
     }
     return numberToGeez(day);
